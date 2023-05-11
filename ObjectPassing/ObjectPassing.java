@@ -7,6 +7,7 @@ public class ObjectPassing {
 
         Car car1 = new Car("BMW 5 Series");
         Car car2 = new Car("Toyota Camry");
+        
 
         garage.park(car1);
         garage.park(car2);

@@ -1,4 +1,4 @@
-package Lab05;
+package Labs.Lab05;
 
 class Rectangle {
     private double width = 1;

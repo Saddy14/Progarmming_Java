@@ -1,4 +1,4 @@
-package Lab05;
+// package Labs.Lab05;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;

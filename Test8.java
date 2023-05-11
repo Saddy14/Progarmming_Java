@@ -1,45 +1,49 @@
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Arrays;
 
 public class Test8 {
     public static void main(String[] args) {
         
-        String[] suit = { "c", "d", "h", "s" };
-        String[] rank = { "A", "2", "3", "4", "5", "6", "7", "8", "9", "X", "J", "Q", "K" };
+        ArrayList<String> player1 = new ArrayList<>(Arrays.asList("c4", "d9", "h5", "s9"));
+        ArrayList<String> player2 = new ArrayList<>(Arrays.asList("c1", "d6", "hx", "sQ"));
+        ArrayList<String> center = new ArrayList<>();
+               
+        // center.add("s9");
+        // center.add("hx");
 
-        ArrayList<String> deck = new ArrayList<>();
-  
-        // for (int i = 0; i < 52; i++) {
-  
-        //    deck.add(rank[i%13] + suit[i/13]);
-        // }
-        for (int i = 0; i < suit.length; i++) {
+        center.add("s5");
+        System.out.println("player1: "+ player1);
+        System.out.println("player2: "+ player2);
+        System.out.println("center: "+ center);
 
-            for (int j = 0; j < rank.length; j++) {
-                deck.add(rank[j] + suit[i]);
+        System.out.println(startingPlayer(center));    
+    }
+
+    static int startingPlayer(ArrayList<String> center) {
+
+        ArrayList<String> player1 = new ArrayList<>(Arrays.asList("c4", "d9", "h5", "s9"));
+        ArrayList<String> player2 = new ArrayList<>(Arrays.asList("c1", "d6", "hx", "sQ"));
+        int temp = 0;
+
+        for (int i = 0; i < 4; i++) {
+
+            if (center.contains(player1.get(i))) {
+                System.out.println("p1");
+                temp = 1;
+                break;
             }
+            if (center.contains(player2.get(i))) {
+                System.out.println("p2");
+                temp = 2;
+                break;
+            }
+            else {
+                temp = -1;
+            }
+            
         }
-        System.out.println(deck.size());
 
-
-
-
-        // Check to see of deck is correctly working
-        System.out.println(deck);
-  
-        // Random Deck
-        Random random = new Random();
-  
-        for(int i = 0; i < 52; i++) {
-  
-           int randomIndex = random.nextInt(52);
-           deck.set(i, deck.get(randomIndex));
-        }
-        
-        // Check to see of deck is correctly working
-        System.out.println();
-        System.out.println(deck);
-        System.out.println(deck.size());
+        return temp;
     }
 }
 
