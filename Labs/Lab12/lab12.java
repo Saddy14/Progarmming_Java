@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class lab12 {
     public static void main(String[] args) {
         
-        // Instance of the class 
         MyLinkedList list = new MyLinkedList();
 
         list.start();
